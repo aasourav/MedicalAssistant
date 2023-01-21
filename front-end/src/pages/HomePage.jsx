@@ -321,5 +321,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-//lets start framer motion......
