@@ -9,7 +9,10 @@ import {
 } from "../../api/userApi/userApi.js";
 import SearchDocBySympdomCard from "./card/SearchDocBySympdomCard.jsx";
 
-const SearchDoctorWrapper = styled.div``;
+const SearchDoctorWrapper = styled.div`
+  height: 100%;
+  overflow: auto;
+`;
 const Intro = styled.div`
   display: flex;
   flex-direction: column;
@@ -137,7 +140,13 @@ const SearchDocBySympdom = () => {
           </SearchSection>
         </Intro>
         {getResult.length > 0 ? (
-          <div style={{ display: "flex", marginLeft: 20 }}>
+          <div
+            style={{
+              display: "flex",
+              marginLeft: 20,
+              flexWrap: "wrap",
+            }}
+          >
             {getResult.map((userData, i) => (
               <SearchDocBySympdomCard
                 key={i}

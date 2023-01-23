@@ -72,6 +72,7 @@ const DoctorButton = styled(Button)`
 `;
 const DetailsContent = styled.div`
   height: 100%;
+  overflow: auto;
   background-color: white;
 `;
 

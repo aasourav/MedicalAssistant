@@ -1032,7 +1032,7 @@ const NeedBLood = () => {
     getBlood();
   }, [getBlood]);
   return (
-    <div style={{ paddingLeft: 20 }}>
+    <div style={{ paddingLeft: 20, height: "100%", overflow: "auto" }}>
       <FilterWrapper
         {...formItemLayout}
         form={form}
@@ -1060,7 +1060,15 @@ const NeedBLood = () => {
           </Button>
         </SearchBarButton>
       </FilterWrapper>
-      <div style={{ display: "flex", flexWrap: "wrap", alignSelf: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          alignSelf: "center",
+          height: "100%",
+          overflow: "auto",
+        }}
+      >
         {getUserForBlood.length > 0
           ? getUserForBlood.map((data) => {
               if (

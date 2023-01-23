@@ -402,7 +402,7 @@ const ApplyNow = () => {
   }, [getBlood]);
 
   return (
-    <div style={{ paddingLeft: 20 }}>
+    <div style={{ paddingLeft: 20, height: "100%", overflow: "auto" }}>
       <FilterWrapper
         {...formItemLayout}
         form={form}

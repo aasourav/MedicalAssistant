@@ -1027,7 +1027,7 @@ const UserBlood = () => {
     getBlood();
   }, [getBlood]);
   return (
-    <div style={{ paddingLeft: 20 }}>
+    <div style={{ paddingLeft: 20, overflow: "hidden" }}>
       <FilterWrapper
         {...formItemLayout}
         form={form}

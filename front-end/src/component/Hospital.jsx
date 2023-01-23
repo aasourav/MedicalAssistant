@@ -68,11 +68,14 @@ const DoctorNav = styled.div`
 `;
 
 const DoctorButton = styled(Button)`
+  background-color: #23b423;
   min-width: 210px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 const DetailsContent = styled.div`
   /* height: 100%; */
+  height: 100%;
+  overflow: auto;
   background-color: white;
 `;
 
@@ -206,6 +209,7 @@ const Doctor = () => {
       <RightContent>
         <DoctorNav>
           <DoctorButton
+            type="primary"
             onClick={() => {
               setSubMenu("our_doctors");
             }}
@@ -213,6 +217,7 @@ const Doctor = () => {
             Our Doctors
           </DoctorButton>
           <DoctorButton
+            type="primary"
             onClick={() => {
               setSubMenu("req_doctors");
             }}
@@ -220,13 +225,16 @@ const Doctor = () => {
             CV Inbox
           </DoctorButton>
           <DoctorButton
+            type="primary"
             onClick={() => {
               setSubMenu("blood");
             }}
           >
             Need Blood
           </DoctorButton>
-          <DoctorButton onClick={onLogout}>Logout</DoctorButton>
+          <DoctorButton type="primary" onClick={onLogout}>
+            Logout
+          </DoctorButton>
         </DoctorNav>
         <DetailsContent>
           {subMeu === "blood" ? (

@@ -12,8 +12,8 @@ import {
   Switch,
   TreeSelect,
 } from "antd";
-// import NeedBloodCard from "./Card/NeedBloodCard";
-import NeedBloodCard from "../hospitalComponent/Card/NeedBloodCard";
+import NeedBloodCard from "./Card/NeedBloodCard";
+// import NeedBloodCard from "../hospitalComponent/Card/NeedBloodCard";
 
 import styled from "styled-components";
 import { hospitalGetUserForBlood } from "../../api/hospitalApi/hospitalApi";

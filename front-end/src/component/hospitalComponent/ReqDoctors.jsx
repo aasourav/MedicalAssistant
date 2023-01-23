@@ -419,7 +419,7 @@ const ReqDoctors = () => {
   }, [getBlood]);
 
   return (
-    <div style={{ paddingLeft: 20 }}>
+    <div style={{ paddingLeft: 20, height: "100%", overflow: "auto" }}>
       <div
         style={{
           paddign: "2rem",

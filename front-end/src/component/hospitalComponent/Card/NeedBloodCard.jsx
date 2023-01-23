@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 const CardWrapper = styled.div`
+  height: 100%;
+  overflow: scroll;
   padding: 5px;
 `;
 const CardStyle = styled(Card)`

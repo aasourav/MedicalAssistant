@@ -403,7 +403,7 @@ const OurDoctors = () => {
   }, [getBlood]);
 
   return (
-    <div style={{ paddingLeft: 20 }}>
+    <div style={{ paddingLeft: 20, height: "100%", overflow: "auto" }}>
       <div
         style={{
           paddingTop: "2rem",
