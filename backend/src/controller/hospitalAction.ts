@@ -121,9 +121,8 @@ export const approve = async (req: Request, res: Response) => {
 
   let newApproveList;
   if (newList) {
-    newApproveList = [...newList, doctorId];
+    newApproveList = [...doctorList, doctorId];
   }
-  newApproveList.push(doctorId);
 
   await Hospital.findOneAndUpdate({ _id: req.params.hospitalId }, { doctorList: newApproveList, doctorReq: newList });
   res.send('Successfully Approved.');
