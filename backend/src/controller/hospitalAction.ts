@@ -121,7 +121,7 @@ export const approve = async (req: Request, res: Response) => {
 
   let newApproveList;
   if (newList) {
-    newApproveList = [...newList, ...doctorList];
+    newApproveList = [...newList, doctorId];
   }
   newApproveList.push(doctorId);
 
