@@ -9,7 +9,7 @@ import { userInfo } from 'os';
 
 export const signup = async (req: Request, res: Response) => {
   const hospital = new Hospital(req.body);
-  console.log(req.body);
+  // console.log(req.body);
   try {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(hospital.password, salt);
@@ -104,7 +104,7 @@ export const cvDraft = async (req: Request, res: Response) => {
       if (doctorDoc) doctorList.push(doctorDoc);
     }
   }
-  console.log(doctorList);
+  // console.log(doctorList);
   return res.send(doctorList);
 };
 export const approve = async (req: Request, res: Response) => {
@@ -112,14 +112,16 @@ export const approve = async (req: Request, res: Response) => {
   const users = await Hospital.findById({ _id: req.params.hospitalId });
 
   let doctorReq;
+  let doctorList;
   if (users) {
     doctorReq = [...users.doctorReq];
+    doctorList = [...users.doctorList];
   }
   const newList = doctorReq.filter((data) => data !== doctorId);
 
   let newApproveList;
   if (newList) {
-    newApproveList = [...newList];
+    newApproveList = [...newList, ...doctorList];
   }
   newApproveList.push(doctorId);
 
@@ -138,7 +140,7 @@ export const reject = async (req: Request, res: Response) => {
     }
     const newList = doctorReq.filter((data) => data !== doctorId);
 
-    console.log(newList);
+    // console.log(newList);
     await Hospital.findOneAndUpdate({ _id: req.params.hospitalId }, { doctorReq: newList });
 
     res.send('Successfully Declined.');
@@ -180,7 +182,7 @@ export const getUsersForBlood = async (req: Request, res: Response) => {
   if (locationDiv) query['locationDiv'] = locationDiv;
   if (bloodGroup) query['bloodGroup'] = bloodGroup;
 
-  console.log(req.userInfo);
+  // console.log(req.userInfo);
   try {
     const users = await User.find(query);
     res.send(users);
@@ -192,7 +194,7 @@ export const getUsersForBlood = async (req: Request, res: Response) => {
 export const doctorsCV = async (req: Request, res: Response) => {
   try {
     const docotrsCvDoc = await Hospital.find({ _id: req.userInfo?._id });
-    console.log(docotrsCvDoc);
+    // console.log(docotrsCvDoc);
     return res.status(200).send(docotrsCvDoc[0]?.doctorReq);
   } catch (err: any) {
     res.status(400).send(err.message);

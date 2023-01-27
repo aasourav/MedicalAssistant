@@ -6,7 +6,7 @@ const CardWrapper = styled.div`
   padding: 5px;
 `;
 const CardStyle = styled(Card)`
-  width: 350px !important;
+  width: 490px !important;
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
 `;
