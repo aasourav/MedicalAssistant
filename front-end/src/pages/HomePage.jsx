@@ -96,7 +96,7 @@ function HomePage() {
   return (
     <>
       <Modal
-        title="Hospital Registration"
+        // title="Hospital Registration"
         open={isHospitalOpen}
         onOk={onHospital}
         onCancel={onHospital}
@@ -231,7 +231,7 @@ function HomePage() {
         </Form>
       </Modal>
       <Modal
-        title="Doctor Login"
+        // title="Doctor Login"
         open={isDoctorOpen}
         onOk={onDoctor}
         onCancel={onDoctor}
